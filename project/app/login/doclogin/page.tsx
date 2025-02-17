@@ -1,6 +1,6 @@
 import { GalleryVerticalEnd } from "lucide-react"
 import "@/app/globals.css"; // Adjust the path if needed
-import { LoginForm } from "@/components/login-form"
+import { LoginForm } from "@/components/doclogin"
 
 
 export default function LoginPage() {
