@@ -14,7 +14,7 @@ export function AspectRatioDemo() {
         className="h-full w-full rounded-md object-cover"
       />
     </AspectRatio>
-  )
+  );
 }
 
 
@@ -26,14 +26,14 @@ export default function LandingPage() {
         <h1 className="text-5xl font-extrabold mb-4">Welcome to Our Platform</h1>
         <p className="text-lg mb-6">Join us to access personalized insights and a seamless experience.</p>
         <div className="flex space-x-6 justify-center">
-          <Link href="/login">
+          <Link href="/doctor">
             <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition transform hover:scale-105">
-              Login
+              doctor
             </button>
           </Link>
-          <Link href="/signup">
-            <button className="px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded-lg shadow-lg hover:bg-yellow-500 transition transform hover:scale-105">
-              Sign Up
+          <Link href="/patient">
+            <button className="px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition transform hover:scale-105">
+              patient
             </button>
           </Link>
         </div>
