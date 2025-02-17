@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import "@/app/globals.css"; 
 import Image from "next/image"
 
 import { AspectRatio } from "@/components/ui/aspect-ratio"
