@@ -1,15 +1,14 @@
-
-
-
 "use client";
 import React, { useRef, useState } from "react";
 import Link from "next/link";
 import "@/app/globals.css"; 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+
 import { UserIcon, DocumentTextIcon, ClipboardDocumentListIcon, HeartIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { SparklesCore } from "@/components/ui/sparkles";
+import { Carousel , Card} from "@/components/ui/apple-cards-carousel";
+import Image from "next/image";
 
 // Footer Component
 const Footer = () => {
@@ -148,6 +147,52 @@ const SparklesPreview = () => {
   );
 };
 
+
+const FeaturesCarousel = () => {
+  const cards = data.map((card, index) => (
+    <Card key={card.src} card={card} index={index} />
+  ));
+
+  return (
+    <div className="w-full h-full py-20">
+      <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-white font-sans text-center">
+        Explore Our AI-Driven Features
+      </h2>
+      <Carousel items={cards} />
+    </div>
+  );
+};
+
+const DummyContent = () => {
+  return (
+    <>
+      {[...new Array(3).fill(1)].map((_, index) => (
+        <div key={"dummy-content" + index} className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
+          <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+            <span className="font-bold text-neutral-700 dark:text-neutral-200">AI-powered patient insights</span>
+            Track and monitor patient records effortlessly.
+          </p>
+          <Image
+            src="https://assets.aceternity.com/macbook.png"
+            alt="Macbook mockup from Aceternity UI"
+            height="500"
+            width="500"
+            className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
+          />
+        </div>
+      ))}
+    </>
+  );
+};
+
+const data = [
+  { category: "Artificial Intelligence", title: "AI-powered Health Analysis", src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop", content: <DummyContent /> },
+  { category: "Productivity", title: "Efficient Patient Monitoring", src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop", content: <DummyContent /> },
+  { category: "Security", title: "Secure Patient Records", src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop", content: <DummyContent /> },
+  { category: "Doctor Dashboard", title: "Monitor and Track Patients", src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop", content: <DummyContent /> },
+  { category: "Real-time Monitoring", title: "Instant Health Updates", src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop", content: <DummyContent /> },
+];
+
 const WelcomePage = () => {
   const nextSectionRef = useRef<HTMLDivElement>(null);
 
@@ -191,25 +236,7 @@ const WelcomePage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="grid grid-cols-1 md:grid-cols-4 gap-6 p-8">
-        {[
-          { title: "Health Score Analysis", icon: DocumentTextIcon, description: "AI-powered patient health scoring for quick insights.", link: "/health-score" },
-          { title: "Patient Records", icon: ClipboardDocumentListIcon, description: "View and manage patient history and medical records.", link: "/patients" },
-          { title: "Doctor Dashboard", icon: UserIcon, description: "Monitor and track all patient health data at a glance.", link: "/dashboard" },
-          { title: "Real-time Monitoring", icon: HeartIcon, description: "Track patient vitals and receive instant alerts with care and support.", link: "/monitoring" },
-        ].map(({ title, icon: Icon, description, link }) => (
-          <Link key={title} href={link}>
-            <Card className="p-6 cursor-pointer hover:shadow-lg transition bg-gray-800 border border-gray-700">
-              <CardContent className="flex flex-col items-center">
-                <Icon className="text-blue-400 w-12 h-12 mb-4" />
-                <h3 className="text-lg font-medium text-gray-200">{title}</h3>
-                <p className="text-gray-400 text-center">{description}</p>
-              </CardContent>
-            </Card>
-          </Link>
-        ))}
-      </section>
+      <FeaturesCarousel />
 
       {/* Add Footer here */}
       <Footer />
