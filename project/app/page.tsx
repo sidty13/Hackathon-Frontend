@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Link from "next/link";
 import "@/app/globals.css"; 
 import { Button } from "@/components/ui/button";
@@ -57,6 +57,7 @@ const Navbar = () => {
   );
 };
 
+
 const SparklesPreview = () => {
   return (
     <div className="h-[40rem] w-full bg-black flex flex-col items-center justify-center overflow-hidden rounded-md">
@@ -87,14 +88,13 @@ const SparklesPreview = () => {
   );
 };
 
-const features = [
-  { title: "Health Score Analysis", icon: DocumentTextIcon, description: "AI-powered patient health scoring for quick insights.", link: "/health-score" },
-  { title: "Patient Records", icon: ClipboardDocumentListIcon, description: "View and manage patient history and medical records.", link: "/patients" },
-  { title: "Doctor Dashboard", icon: UserIcon, description: "Monitor and track all patient health data at a glance.", link: "/dashboard" },
-  { title: "Real-time Monitoring", icon: HeartIcon, description: "Track patient vitals and receive instant alerts with care and support.", link: "/monitoring" },
-];
-
 const WelcomePage = () => {
+  const nextSectionRef = useRef<HTMLDivElement>(null);
+
+  const scrollToNextSection = () => {
+    nextSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="bg-black text-white min-h-screen">
       <Navbar />
@@ -103,12 +103,17 @@ const WelcomePage = () => {
         <h2 className="text-3xl font-semibold text-blue-400">Welcome to MedAI</h2>
         <p className="text-gray-400 mt-2">AI-driven medical insights for faster, smarter healthcare.</p>
         <div className="mt-6">
-          <Link href="/choose-role">
-            <Button className="bg-blue-500 text-black px-6 py-2 hover:bg-blue-400">Get Started</Button>
-          </Link>
+          <button 
+            onClick={scrollToNextSection}
+            className="bg-blue-500 text-black px-6 py-2 hover:bg-blue-400 rounded-lg"
+          >
+            Get Started
+          </button>
         </div>
       </header>
-      <section className="text-center py-6 bg-black">
+
+      {/* Choose Role Section */}
+      <section ref={nextSectionRef} className="text-center py-12 bg-black">
         <h3 className="text-xl font-semibold text-blue-400">Select Your Role</h3>
         <div className="flex justify-center space-x-6 mt-4">
           <Link href="/doctor">
@@ -123,8 +128,15 @@ const WelcomePage = () => {
           </Link>
         </div>
       </section>
+
+      {/* Features Section */}
       <section className="grid grid-cols-1 md:grid-cols-4 gap-6 p-8">
-        {features.map(({ title, icon: Icon, description, link }) => (
+        {[
+          { title: "Health Score Analysis", icon: DocumentTextIcon, description: "AI-powered patient health scoring for quick insights.", link: "/health-score" },
+          { title: "Patient Records", icon: ClipboardDocumentListIcon, description: "View and manage patient history and medical records.", link: "/patients" },
+          { title: "Doctor Dashboard", icon: UserIcon, description: "Monitor and track all patient health data at a glance.", link: "/dashboard" },
+          { title: "Real-time Monitoring", icon: HeartIcon, description: "Track patient vitals and receive instant alerts with care and support.", link: "/monitoring" },
+        ].map(({ title, icon: Icon, description, link }) => (
           <Link key={title} href={link}>
             <Card className="p-6 cursor-pointer hover:shadow-lg transition bg-gray-800 border border-gray-700">
               <CardContent className="flex flex-col items-center">
