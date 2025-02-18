@@ -18,7 +18,7 @@ export function SigninFormPat({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Signup</CardTitle>
+          <CardTitle className="text-2xl">Welcome to patient Signup</CardTitle>
           <CardDescription>
             Enter your name and email below to create your account
           </CardDescription>
@@ -69,7 +69,7 @@ export function SigninFormPat({
             </div>
             <div className="mt-4 text-center text-sm">
               Already have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
+              <a href="/patient/patlogin" className="underline underline-offset-4">
                 Login
               </a>
             </div>

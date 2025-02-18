@@ -1,6 +1,6 @@
 import { GalleryVerticalEnd } from "lucide-react"
 import "@/app/globals.css"; // Adjust the path if needed
-import { SigninFormPat } from "@/components/signup"
+import { SigninFormPat } from "@/components/patsignup"
 
 
 export default function SigninPage() {

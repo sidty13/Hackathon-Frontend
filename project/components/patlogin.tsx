@@ -18,7 +18,7 @@ export function LoginFormPat({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
+          <CardTitle className="text-2xl">Welcome to patient Login</CardTitle>
           <CardDescription>
             Enter your name and email below to login to your account
           </CardDescription>
@@ -66,7 +66,7 @@ export function LoginFormPat({
             </div>
             <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
+              <a href="/patient/patsignup" className="underline underline-offset-4">
                 Sign up
               </a>
             </div>
