@@ -227,9 +227,7 @@ const WelcomePage = () => {
             </Button>
           </Link>
           <Link href="/patient/patlogin">
-            <Button variant="outline" className="text-black border-blue-400 bg-white hover:bg-blue-100 hover:text-blue
-
--600">
+            <Button variant="outline" className="text-black border-blue-400 bg-white hover:bg-blue-100 hover:text-blue-600">
               Patient
             </Button>
           </Link>

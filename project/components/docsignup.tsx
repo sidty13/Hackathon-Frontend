@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import Link from "next/link";
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -59,10 +60,10 @@ export function SigninFormDoc({
                 </div>
                 <Input id="password" type="password" required />
               </div>
-
+              <Link href="/doctor/doclogin" >
               <Button type="submit" className="w-full">
                 Signup
-              </Button>
+              </Button></Link>
               <Button variant="outline" className="w-full">
                 Signup with Google
               </Button>

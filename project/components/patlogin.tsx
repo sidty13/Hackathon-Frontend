@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import Link from "next/link";
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -57,9 +58,10 @@ export function LoginFormPat({
                 </div>
                 <Input id="password" type="password" required />
               </div>
+              <Link href="/patdash">
               <Button type="submit" className="w-full">
                 Login
-              </Button>
+              </Button></Link>
               <Button variant="outline" className="w-full">
                 Login with Google
               </Button>

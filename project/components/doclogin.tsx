@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils"
+import Link from "next/link";
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -45,9 +46,10 @@ export function LoginForm({
                 />
          
               </div>
+              <Link href="/docdash">
               <Button type="submit" className="w-full">
                 Login
-              </Button>
+              </Button></Link>
               <Button variant="outline" className="w-full">
                 Send OTP
               </Button>
