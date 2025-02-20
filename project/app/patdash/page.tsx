@@ -1,10 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import "@/app/globals.css";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { UploadCloud, FileText, Home, ClipboardList, User, Stethoscope, Files } from "lucide-react";
+import { UploadCloud, FileText, Home, ClipboardList, User, Stethoscope, Files, Settings, MessageCircle } from "lucide-react";
 import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { FileUpload } from "@/components/ui/fileupload";
@@ -51,7 +52,7 @@ const handleFileUpload = (files: File[]) => {
           </p>
           <Button 
             className="mt-20 w-full bg-blue-600 hover:bg-blue-700 text-white"
-            onClick={() => router.push("/patient/form")}
+            onClick={() => router.push("/patdash/form")}
           >
             Fill Form
           </Button>
@@ -70,37 +71,24 @@ function Navbar({ className }: { className?: string }) {
             active={active} 
             item="Home"
           >
-            <HoveredLink href="/patdash/pathome">
+            <HoveredLink href="/patdash/details">
               <Home className="mr-2 inline" /> Dashboard
             </HoveredLink>
           </MenuItem>
   
-          <MenuItem 
-            setActive={setActive} 
-            active={active} 
-            item="Medical Records"
-          >
-            <div className="flex flex-col space-y-2 p-2">
-              <HoveredLink href="/patient/reports">
-                <FileText className="mr-2 inline" /> My Reports
-              </HoveredLink>
-              <HoveredLink href="/patient/history">
-                <ClipboardList className="mr-2 inline" /> Health History
-              </HoveredLink>
-            </div>
-          </MenuItem>
+          
   
           <MenuItem 
             setActive={setActive} 
             active={active} 
-            item="Appointments"
+            item="Notifications"
           >
             <div className="flex flex-col space-y-2 p-2">
               <HoveredLink href="/patient/appointments">
-                <Stethoscope className="mr-2 inline" /> Book Appointment
+                <MessageCircle className="mr-2 inline" /> Messages received
               </HoveredLink>
               <HoveredLink href="/patient/upcoming">
-                <ClipboardList className="mr-2 inline" /> Upcoming Appointments
+                <Stethoscope className="mr-2 inline" /> Upcoming Appointments
               </HoveredLink>
             </div>
           </MenuItem>
@@ -115,7 +103,7 @@ function Navbar({ className }: { className?: string }) {
                 <User className="mr-2 inline" /> View Profile
               </HoveredLink>
               <HoveredLink href="/patient/settings">
-                <ClipboardList className="mr-2 inline" /> Settings
+                <Settings className="mr-2 inline" /> Settings
               </HoveredLink>
             </div>
           </MenuItem>

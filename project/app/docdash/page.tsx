@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "@/app/globals.css";
+import { UploadCloud, FileText, Home, ClipboardList, User, Stethoscope, Files, Settings, MessageCircle } from "lucide-react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -62,7 +63,7 @@ const DataTable = () => {
             </td>
             <td className="px-4 py-2 border-b">10</td>
             <td className="px-4 py-2 border-b">
-              <button className="btn btn-ghost btn-xs"><u><a href="docpatpage/">More details</a></u></button>
+              <button className="btn btn-ghost btn-xs"><u><Link href="/patdash/details">More details</Link></u></button>
             </td>
           </tr>
 
