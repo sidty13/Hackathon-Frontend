@@ -99,7 +99,7 @@ function Navbar({ className }: { className?: string }) {
             item="Profile"
           >
             <div className="flex flex-col space-y-2 p-2">
-              <HoveredLink href="/patient/profile">
+              <HoveredLink href="/patdash/profile">
                 <User className="mr-2 inline" /> View Profile
               </HoveredLink>
               <HoveredLink href="/patient/settings">

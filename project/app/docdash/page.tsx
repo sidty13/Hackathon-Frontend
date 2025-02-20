@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import "@/app/globals.css";
-import { UploadCloud, FileText, Home, ClipboardList, User, Stethoscope, Files, Settings, MessageCircle } from "lucide-react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
