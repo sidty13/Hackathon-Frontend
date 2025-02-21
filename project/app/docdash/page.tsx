@@ -168,7 +168,7 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Profile">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">View Profile </HoveredLink>
+            <HoveredLink href="/docdash/profile">View Profile </HoveredLink>
             <HoveredLink href="/interface-design">Logout</HoveredLink>
             <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
             <HoveredLink href="/branding">Branding</HoveredLink>

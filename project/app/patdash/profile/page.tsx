@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import "@/app/globals.css";
 import { Button } from "@/components/ui/button";
@@ -41,8 +42,8 @@ const PatientProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-blue-300 to-blue-500 p-6 flex flex-col items-center">
-      <Card className="w-full max-w-2xl shadow-lg border border-gray-200 rounded-xl bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-blue-300 to-blue-500 p-12 flex flex-col items-center">
+      <Card className="w-full max-w-4xl shadow-lg border border-gray-200 rounded-xl bg-white">
         <CardHeader className="bg-blue-600 text-white p-6 rounded-t-xl flex flex-col items-center">
           <User size={60} className="mb-3" />
           <CardTitle className="text-xl font-semibold">Patient Profile</CardTitle>
