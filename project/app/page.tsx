@@ -231,6 +231,16 @@ const WelcomePage = () => {
               Patient
             </Button>
           </Link>
+          <Link href="/pharm/pharmlogin">
+            <Button variant="outline" className="text-black border-blue-400 bg-white hover:bg-blue-100 hover:text-blue-600">
+              Pharmacy
+            </Button>
+          </Link>
+          <Link href="/lab/lablogin">
+            <Button variant="outline" className="text-black border-blue-400 bg-white hover:bg-blue-100 hover:text-blue-600">
+              Lab assistant
+            </Button>
+          </Link>
         </div>
       </section>
 
